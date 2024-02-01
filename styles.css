@@ -1,0 +1,19 @@
+
+
+.card{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 500px 200px;
+    gap: 20px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+form{
+    display: none;
+}
