@@ -3,6 +3,10 @@ const btn = document.querySelector('.new-book')
 const submitBtn = document.querySelector('.submit-btn')
 const form = document.querySelector('form')
 const formElement = new FormData(form)
+const isEmpty = document.querySelectorAll(`.input-text`);
+const bookID = document.getElementById('book')
+const author = document.getElementById('author')
+const pages = document.getElementById('pages')
 
 
 
@@ -77,10 +81,20 @@ displayDOM();
 submitBtn.addEventListener('click' , e => {
     e.preventDefault();
     var formData = new FormData(form);
+    
     formObject = Object.fromEntries(formData)
+    
     console.log(formObject)
-    addBookToLibrary(formObject.book_author, formObject.book_name, formObject.book_pages, formObject.book_readed, createUUID())
-    displayDOM();
+    if(author.value && pages.value && bookID.value){
+        addBookToLibrary(formObject.book_author, formObject.book_name, formObject.book_pages, formObject.book_readed, createUUID())
+        displayDOM();
+        author.value = ''
+        bookID.value = ''
+        pages.value = ''
+    }else{
+        alert('Please fill the Input Fields')
+    }
+    
 })
 
 
