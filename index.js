@@ -18,12 +18,14 @@ let formObject;
 
 
 
-function book(author, name,page, readed, id){
-    this.name = name
-    this.page = page
-    this.author = author
-    this.readed = readed
-    this.id = id
+class book{
+    constructor(author, name,page, readed, id){
+        this.name = name
+        this.page = page
+        this.author = author
+        this.readed = readed
+        this.id = id
+    }
 }
 
 
